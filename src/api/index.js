@@ -1,6 +1,6 @@
 const url = "https://jsonplaceholder.typicode.com/todos";
 
-// fetching all the todos
+// Function for fetching all the todos for a specific user
 export const fetchTodo = async function () {
   let data = [];
   try {
@@ -18,7 +18,7 @@ export const fetchTodo = async function () {
   }
 };
 
-// function for creating new tasks
+// Function for creating new tasks
 export const addTaskHandler = async function (title, userId) {
   try {
     const response = await fetch(url, {
@@ -45,7 +45,7 @@ export const addTaskHandler = async function (title, userId) {
   }
 };
 
-// deleting a task
+// Function for deleting a task by ID
 export const deleteTask = async function (id) {
   try {
     await fetch(url + `/${id}`, {
@@ -62,7 +62,7 @@ export const deleteTask = async function (id) {
   }
 };
 
-// updating a task
+// Function for updating a task
 export const updateTask = async function (task) {
   try {
     const response = await fetch(url + `/${task.id}`, {
